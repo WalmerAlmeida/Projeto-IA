@@ -31,5 +31,3 @@ def bc_test(bola, turbidez, coliformes_termotolerantes, solidos_dissolvidos_tota
     engine.print_stats()
 
 bc_test(True, 4, 100, 100, 1)
-bc_test(False, 4, 100, 100, 1)
-bc_test(True, 4, 100, 100, 1)
