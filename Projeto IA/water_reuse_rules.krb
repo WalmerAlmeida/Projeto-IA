@@ -1,0 +1,11 @@
+# water_reuse_rules.krb
+
+qual_classe_1
+    use qual_classe(1, $turbidez, $coliformes_termotolerantes, $solidos_dissolvidos_totais, $cloro_residual)
+    when
+        facts.pH(True)
+        check $turbidez <= 5
+        check $coliformes_termotolerantes <= 200
+        check $solidos_dissolvidos_totais <= 200
+        check $cloro_residual < 1.5
+        check $cloro_residual > 0.5
