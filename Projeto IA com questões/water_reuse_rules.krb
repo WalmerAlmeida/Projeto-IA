@@ -50,3 +50,63 @@ qual_classe_3_1
         check $ans1 <= 10
         questoes.coliformes_termotolerantes($ans2)
         check $ans2 <= 500
+
+# Regra 5
+qual_classe_3_2
+    use qual_classe(5)
+    when    
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 5
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 500
+
+# Regra 6
+qual_classe_3_3
+    use qual_classe(6)
+    when    
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 10
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 500
+
+# Regra 7
+qual_classe_3_4
+    use qual_classe(7)
+    when    
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 10
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 200
+
+# Regra 8
+qual_classe_4_1
+    use qual_classe(8)
+    when    
+        questoes.pH(True)
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 5000
+        questoes.oxigenio_dissolvido($ans5)
+        chech $ans5 >= 2
+
+# Regra 9
+qual_classe_4_2
+    use qual_classe(9)
+    when    
+        questoes.pH(True)
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 500
+        questoes.oxigenio_dissolvido($ans5)
+        chech $ans5 >= 2
+
+# Regra 10
+qual_classe_4_3
+    use qual_classe(10)
+    when    
+        questoes.pH(True)
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 200
+        questoes.oxigenio_dissolvido($ans5)
+        chech $ans5 >= 2
