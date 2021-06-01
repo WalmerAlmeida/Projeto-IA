@@ -10,6 +10,7 @@ engine.ask_module = ask_tty
 def bc_test():
     engine.reset()      # Allows us to run tests multiple times.
     
+    print("\nInsira os dados da água que deseja reutilizar\n")
     
     engine.activate('water_reuse_rules')
 
