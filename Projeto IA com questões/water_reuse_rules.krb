@@ -89,7 +89,7 @@ qual_classe_4_1
         questoes.coliformes_termotolerantes($ans2)
         check $ans2 <= 5000
         questoes.oxigenio_dissolvido($ans5)
-        chech $ans5 >= 2
+        check $ans5 >= 2
 
 # Regra 9
 qual_classe_4_2
@@ -99,7 +99,7 @@ qual_classe_4_2
         questoes.coliformes_termotolerantes($ans2)
         check $ans2 <= 500
         questoes.oxigenio_dissolvido($ans5)
-        chech $ans5 >= 2
+        check $ans5 >= 2
 
 # Regra 10
 qual_classe_4_3
@@ -109,4 +109,4 @@ qual_classe_4_3
         questoes.coliformes_termotolerantes($ans2)
         check $ans2 <= 200
         questoes.oxigenio_dissolvido($ans5)
-        chech $ans5 >= 2
+        check $ans5 >= 2
