@@ -1,0 +1,27 @@
+# water_reuse_rules.krb
+
+qual_classe_1
+    use qual_classe(1)
+    when
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 5
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 200
+        questoes.solidos_dissolvidos_totais($ans3)
+        check $ans3 <= 200
+        questoes.cloro_residual($ans4)
+        check $ans4 < 1.5
+        check $ans4 > 0.5
+
+qual_classe_2
+    use qual_classe(2)
+    when
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 5
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 500
+        questoes.cloro_residual($ans4)
+        check $ans4 < 5.0
+        check $ans4 > 0.5

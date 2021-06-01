@@ -1,0 +1,24 @@
+pH($ans)
+    pH?
+    ---
+    $ans = yn
+
+turbidez($ans1)
+    turbidez?
+    ---
+    $ans1 = float(1-999999)
+
+coliformes_termotolerantes($ans2)
+    coliformes_termotolerantes?
+    ---
+    $ans2 = float(1-999999)
+
+solidos_dissolvidos_totais($ans3)
+    solidos_dissolvidos_totais?
+    ---
+    $ans3 = float(1-999999)
+
+cloro_residual($ans4)
+    cloro_residual?
+    ---
+    $ans4 = float(1-999999)
