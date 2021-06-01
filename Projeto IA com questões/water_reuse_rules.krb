@@ -30,7 +30,7 @@ qual_classe_2_1
 
 # Regra 3
 qual_classe_2_2
-    use qual_clase(3)
+    use qual_classe(3)
     when
         questoes.pH(True)
         questoes.turbidez($ans1)
@@ -40,3 +40,13 @@ qual_classe_2_2
         questoes.cloro_residual($ans4)
         check $ans4 < 1.5
         check $ans4 > 0.5
+
+# Regra 4
+qual_classe_3_1
+    use qual_classe(4)
+    when    
+        questoes.pH(True)
+        questoes.turbidez($ans1)
+        check $ans1 <= 10
+        questoes.coliformes_termotolerantes($ans2)
+        check $ans2 <= 500
