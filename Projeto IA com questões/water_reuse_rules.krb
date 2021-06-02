@@ -6,14 +6,16 @@ qual_classe_1
     when
         questoes.pH(True)
         questoes.turbidez($ans1)
-        check $ans1 <= 5
+        check $ans1 < 5
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 200
+        check $ans2 < 200
         questoes.solidos_dissolvidos_totais($ans3)
-        check $ans3 <= 200
+        check $ans3 < 200
         questoes.cloro_residual($ans4)
         check $ans4 < 1.5
         check $ans4 > 0.5
+        questoes.oxigenio_dissolvido($ans5)
+        check $ans5 > 2
 
 # Regra 2
 qual_classe_2
@@ -21,12 +23,14 @@ qual_classe_2
     when
         questoes.pH(True)
         questoes.turbidez($ans1)
-        check $ans1 <= 5
+        check $ans1 < 5
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 500
+        check $ans2 < 500
         questoes.cloro_residual($ans4)
         check $ans4 < 5.0
         check $ans4 > 0.5
+        questoes.oxigenio_dissolvido($ans5)
+        check $ans5 > 2
 
 # Regra 4
 qual_classe_3
@@ -34,9 +38,11 @@ qual_classe_3
     when    
         questoes.pH(True)
         questoes.turbidez($ans1)
-        check $ans1 <= 10
+        check $ans1 < 10
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 500
+        check $ans2 < 500
+        questoes.oxigenio_dissolvido($ans5)
+        check $ans5 > 2
 
 # Regra 8
 qual_classe_4
@@ -44,27 +50,44 @@ qual_classe_4
     when    
         questoes.pH(True)
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 5000
+        check $ans2 < 5000
         questoes.oxigenio_dissolvido($ans5)
-        check $ans5 >= 2
+        check $ans5 > 2
 
 # Regra 11
 qual_classe_5
     use classe("Impropria para reuso")
     when
-        questoes.pH(False)
         questoes.turbidez($ans1)
-        check $ans1 >= 10
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 >= 5000
         questoes.solidos_dissolvidos_totais($ans3)
-        check $ans3 >= 200
         questoes.cloro_residual($ans4)
-        check $ans4 <= 0.5
-        check $ans4 >= 5.0
-        check $ans4 == 0
         questoes.oxigenio_dissolvido($ans5)
-        check $ans5 <= 2
+        notany
+            notany
+                notany
+                    notany
+                        notany
+                            notany
+                                check $ans1 >= 10
+                            notany
+                                check $ans2 >= 5000
+                    notany
+                        notany
+                            notany
+                                check $ans3 >= 200
+                            notany
+                                check $ans4 <= 0.5
+            notany
+                notany
+                    notany
+                        check $ans4 >= 5.0
+                    notany
+                        notany
+                            notany
+                                questoes.pH(False)
+                            notany
+                                check $ans5 <= 2
 
 # Regra 12, 17
 comentarios_classe_1
