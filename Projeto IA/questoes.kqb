@@ -1,0 +1,29 @@
+pH($ans)
+    O valor do pH está entre 6 e 8?
+    ---
+    $ans = yn
+
+turbidez($ans1)
+    Valor de turbidez em (u/T)?
+    ---
+    $ans1 = float(1-999999)
+
+coliformes_termotolerantes($ans2)
+    Valor de coliformes termotolerantes em (NMP/100mL)?
+    ---
+    $ans2 = float(1-999999)
+
+solidos_dissolvidos_totais($ans3)
+    Valor de sólidos dissolvidos totais em (mg/L)?
+    ---
+    $ans3 = float(1-999999)
+
+cloro_residual($ans4)
+    Valor do cloro residual em (mg/L)? Insira 0, caso não seja detectável!
+    ---
+    $ans4 = float(0-999999)
+
+oxigenio_dissolvido($ans5)
+    Valor do oxigênio dissolvido em (mg/L)?
+    ---
+    $ans5 = float(1-999999)
