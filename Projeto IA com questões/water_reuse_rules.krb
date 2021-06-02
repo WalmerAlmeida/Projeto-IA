@@ -2,7 +2,7 @@
 
 # Regra 1
 qual_classe_1
-    use qual_classe(1)
+    use classe(1)
     when
         questoes.pH(True)
         questoes.turbidez($ans1)
@@ -16,8 +16,8 @@ qual_classe_1
         check $ans4 > 0.5
 
 # Regra 2
-qual_classe_2_1
-    use qual_classe(2)
+qual_classe_2
+    use classe(2)
     when
         questoes.pH(True)
         questoes.turbidez($ans1)
@@ -28,62 +28,19 @@ qual_classe_2_1
         check $ans4 < 5.0
         check $ans4 > 0.5
 
-# Regra 3
-qual_classe_2_2
-    use qual_classe(3)
-    when
-        questoes.pH(True)
-        questoes.turbidez($ans1)
-        check $ans1 <= 5
-        questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 200
-        questoes.cloro_residual($ans4)
-        check $ans4 < 1.5
-        check $ans4 > 0.5
-
 # Regra 4
-qual_classe_3_1
-    use qual_classe(4)
+qual_classe_3
+    use classe(3)
     when    
         questoes.pH(True)
         questoes.turbidez($ans1)
         check $ans1 <= 10
         questoes.coliformes_termotolerantes($ans2)
         check $ans2 <= 500
-
-# Regra 5
-qual_classe_3_2
-    use qual_classe(5)
-    when    
-        questoes.pH(True)
-        questoes.turbidez($ans1)
-        check $ans1 <= 5
-        questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 500
-
-# Regra 6
-qual_classe_3_3
-    use qual_classe(6)
-    when    
-        questoes.pH(True)
-        questoes.turbidez($ans1)
-        check $ans1 <= 10
-        questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 500
-
-# Regra 7
-qual_classe_3_4
-    use qual_classe(7)
-    when    
-        questoes.pH(True)
-        questoes.turbidez($ans1)
-        check $ans1 <= 10
-        questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 200
 
 # Regra 8
-qual_classe_4_1
-    use qual_classe(8)
+qual_classe_4
+    use classe(4)
     when    
         questoes.pH(True)
         questoes.coliformes_termotolerantes($ans2)
@@ -91,22 +48,65 @@ qual_classe_4_1
         questoes.oxigenio_dissolvido($ans5)
         check $ans5 >= 2
 
-# Regra 9
-qual_classe_4_2
-    use qual_classe(9)
-    when    
-        questoes.pH(True)
+# Regra 11
+qual_classe_5
+    use classe("Impropria para reuso")
+    when
+        questoes.pH(False)
+        questoes.turbidez($ans1)
+        check $ans1 >= 10
         questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 500
+        check $ans2 >= 5000
+        questoes.solidos_dissolvidos_totais($ans3)
+        check $ans3 >= 200
+        questoes.cloro_residual($ans4)
+        check $ans4 <= 0.5
+        check $ans4 >= 5.0
+        check $ans4 == 0
         questoes.oxigenio_dissolvido($ans5)
-        check $ans5 >= 2
+        check $ans5 <= 2
 
-# Regra 10
-qual_classe_4_3
-    use qual_classe(10)
-    when    
-        questoes.pH(True)
-        questoes.coliformes_termotolerantes($ans2)
-        check $ans2 <= 200
-        questoes.oxigenio_dissolvido($ans5)
-        check $ans5 >= 2
+# Regra 12, 17
+comentarios_classe_1
+    use comentarios("Classe 1: \n\nAplicações: Lavagem de carros e outros usos com contato direto com usuário\n\nComentários: Nesse nível, serão geralmente necessários tratamentos aeróbios(filtro aeróbio submerso ou LAB) seguidos por filtração convencional(areia e carvão ativado) e, finalmente, cloração. Pode-se substituir a filtração convencional por membrana filtrante.\n\nConselhos: Sem conselhos")
+    when
+        classe(1)
+
+# Regra 13, 18 e 23
+comentarios_classe_2
+    use comentarios("Classe 2: \n\nAplicações: Lavagem de pisos, calçadas e irrigação de jardins, manutenção de lagos e canais paisagisticos, exceto chafarizes\n\nComentários: Nesse nível é satisfatório um tratamento biológico aeróbio(filtro aeróbio submerso ou LAB) seguido de filtração de areia e desinfecção. Pode-se também substituir a filtração por membranas filtrantes.\n\nConselhos: Caso não esteja classificado para classe 1, e deseje usar a água de reúso para classe 1(Lavagem de carros e outros usos com contato direto com usuário) são geralmente necessários tratamentos aeróbios(filtro  aeróbio submerso ou LAB) seguidos por filtração convencional(areia e carvão ativado) e, finalmente, cloração. Pode-se substituir a filtração convencional por membrana filtrante.")
+    when
+        classe(2)
+
+# Regra 14, 19 e 24
+comentarios_classe_3
+    use comentarios("Classe 3: \n\nAplicações: Descarga em vasos sanitários\n\nComentários: Normalmente, as águas de enxágue das máquinas de lavar roupas satisfazem a este padrão, sendo necessário apenas uma cloração. Para casos gerais, um tratamento aeróbio seguido de filtração e desinfecção satisfaz a este padrão.\n\nConselhos: Caso não esteja classificado para classe 2, e deseje usar a água de reúso para classe 2(Lavagem de pisos, calçadas e irrigação de jardins, manutenção de lagos e canais paisagisticos, exceto chafarizes) é satisfatório um tratamento biológico aeróbio(filtro aeróbio submerso ou LAB) seguido de filtração de areia e desinfecção. Pode-se também substituir a filtração por membranas filtrantes.")
+    when
+        classe(3)
+
+# Regra 15, 20 e 25
+comentarios_classe_4
+    use comentarios("Classe 4: \n\nAplicações: Irrigação de pomares, cereais, forragens, pastagem para gados e outros cultivos, através de escoamento superficial ou por sistema de irrigação pontual.\n\nComentários: As aplicações devem ser interrompidas pelo menos 10 dias antes da colheita.\n\nConselhos: Caso não esteja classificado para classe 3, e deseje usar a água de reúso para classe 3(Descarga em vasos sanitários) é necessário um tratamento aeróbio seguido de filtração e desinfecção. As águas de enxágue das máquinas de lavar roupas satisfazem ao padrão da classe 3, sendo necessário apenas uma cloração.")
+    when
+        classe(4)
+
+# Regra 16, 21
+comentarios_classe_5
+    use comentarios("Classe Imprópria para reúso: \n\nAplicações: Sem aplicações\n\nComentários: Imprópria para o reúso pois não está de acordo com a norma da ABNT NBR 13.969 de setembro de 1997.\n\nConselhos: Sem conselhos")
+    when
+        classe("Impropria para reuso")
+
+# Regra 22
+comentarios_sem_classe
+    use comentarios("Dados insuficientes para tomada de decisão\n\nComentários: Reinicie a consulta e verifique os dados")
+    when
+        notany
+            classe(1)
+        notany
+            classe(2)
+        notany
+            classe(3)
+        notany
+            classe(4)
+        notany
+            classe("Impropria para reuso")

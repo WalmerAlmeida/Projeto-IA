@@ -19,9 +19,9 @@ solidos_dissolvidos_totais($ans3)
     $ans3 = float(1-999999)
 
 cloro_residual($ans4)
-    Valor do cloro residual em (mg/L)? Insira -1, ou algum outro número negativo, caso não seja detectável!
+    Valor do cloro residual em (mg/L)? Insira 0, caso não seja detectável!
     ---
-    $ans4 = float
+    $ans4 = float(0-999999)
 
 oxigenio_dissolvido($ans5)
     Valor do oxigênio dissolvido em (mg/L)?
